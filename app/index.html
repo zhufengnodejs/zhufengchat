@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="zhufengChat">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰聊天室</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">珠峰聊天室</a>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right" ng-show="user">
+                <li><a href="#"><img style="width:30px;height:30px;" class="img-rounded" ng-src="{{user.avatar}}" alt="{{user.email}}"></a></li>
+                <li><a href="#">{{user.email}}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" ng-view>
+
+</div>
+</body>
+<script src="lib/jquery/dist/jquery.js"></script>
+<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="/app.js"></script>
+<script src="/controller/LoginCtrl.js"></script>
+<script src="/controller/RoomsCtrl.js"></script>
+</html>
