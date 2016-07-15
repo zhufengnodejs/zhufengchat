@@ -2,6 +2,7 @@ angular.module('zhufengChat').controller('RoomCtrl',['$scope','$http','$location
     var roomId = $routeParams.roomId;
     socket.emit('join',{roomId:roomId,user:$rootScope.user});
     $scope.newMessage = '';
+    $scope.room = {};
     $http({
         url:'/room/detail/'+roomId,
         method:'post',
@@ -25,6 +26,7 @@ angular.module('zhufengChat').controller('RoomCtrl',['$scope','$http','$location
     }
 
     socket.on('messageCreated',function(msg){
+        if($scope.room)
         $scope.$apply(function(){
             $scope.room.messages.push(msg);
         });
@@ -41,6 +43,7 @@ angular.module('zhufengChat').controller('RoomCtrl',['$scope','$http','$location
     });
 
     socket.on('userDeleted',function(user){
+        if($scope.room)
         $scope.$apply(function(){
             $scope.room.users = $scope.room.users.filter(function(item){
                 return item._id != user._id;

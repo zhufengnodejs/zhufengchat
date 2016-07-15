@@ -1,4 +1,4 @@
-angular.module('zhufengChat', ['ngRoute']).config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
+angular.module('zhufengChat', ['ngRoute','angularMoment']).config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
     $routeProvider.when('/',{
         templateUrl:'/pages/login.html',
         controller:'LoginCtrl'

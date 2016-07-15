@@ -9,6 +9,7 @@ var app = express();
 var models = require('./models');
 app.use(express.static(path.join(__dirname,'app')));
 app.use(express.static(path.join(__dirname,'public')));
+//app.use(express.static(path.join(__dirname,'dist')));
 app.get('/',function(req,res){
     res.sendFile(path.resolve('./app/index.html'));
 });

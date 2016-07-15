@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="zhufengChat">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰聊天室</title>
+    <link rel="stylesheet" href="/css/vendor.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">珠峰聊天室</a>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav navbar-right" ng-show="user">
+                <li><a href="#"><img style="width:30px;height:30px;" class="img-rounded" ng-src="{{user.avatar}}" alt="{{user.email}}"></a></li>
+                <li><a href="#">{{user.email}}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" ng-view>
+
+</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/script/vendor.js"></script>
+<script src="/script/app.js"></script>
+</html>

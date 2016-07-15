@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>珠峰聊天室</title>
-    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <!-- build:css /css/vendor.css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+    <!-- endbuild -->
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -25,6 +27,7 @@
 </div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
+<!-- build:js /script/vendor.js -->
 <script src="lib/jquery/dist/jquery.js"></script>
 <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 <script src="lib/angular/angular.js"></script>
@@ -32,10 +35,13 @@
 <script src="lib/moment/moment.js"></script>
 <script src="lib/moment/locale/zh-cn.js"></script>
 <script src="lib/angular-moment/angular-moment.js"></script>
-<script src="/app.js"></script>
-<script src="/controller/LoginCtrl.js"></script>
-<script src="/controller/RoomsCtrl.js"></script>
-<script src="/controller/RoomCtrl.js"></script>
-<script src="/directive/ctrlEnterBreakLine.js"></script>
-<script src="/service/socket.js"></script>
+<!-- endbuild -->
+<!-- build:js /script/app.js -->
+<script src="app.js"></script>
+<script src="controller/LoginCtrl.js"></script>
+<script src="controller/RoomsCtrl.js"></script>
+<script src="controller/RoomCtrl.js"></script>
+<script src="directive/ctrlEnterBreakLine.js"></script>
+<script src="service/socket.js"></script>
+<!-- endbuild -->
 </html>

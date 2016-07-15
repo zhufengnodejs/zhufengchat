@@ -10,13 +10,11 @@ angular.module('zhufengChat').controller('RoomsCtrl',['$scope','$http','$locatio
         console.error(result);
     })
 
-    //根据关键字进行过滤
     $scope.filter = function(){
         $scope.rooms = $scope._rooms.filter(function(room){
             return room.name.indexOf($scope.keyword)!=-1;
         });
     }
-    //创建房间
     $scope.createRoom = function(){
         $http({
             url:'/room/add',
@@ -30,7 +28,6 @@ angular.module('zhufengChat').controller('RoomsCtrl',['$scope','$http','$locatio
         });
     }
 
-    //进入房间
     $scope.join = function(roomId){
         $location.path("/rooms/"+roomId);
     }

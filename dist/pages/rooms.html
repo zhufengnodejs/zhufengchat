@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <input placeholder="请输入房间名" type="text" class="form-control" ng-change="filter()" ng-model="keyword">
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-3" ng-repeat="room in rooms">
+                        <div class="panel panel-default" ng-click="join(room._id)">
+                            <div class="panel-body text-center">
+                                <h2>{{room.name}}</h2>
+                            </div>
+                            <div class="panel-footer text-center">
+                                <p>在线:{{room.users.length}}人</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div ng-show="rooms.length==0">
+                    <button class="btn btn-primary" ng-click="createRoom()">创建房间</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
