@@ -5,10 +5,16 @@ angular.module('zhufengChat', ['ngRoute']).config(['$routeProvider','$locationPr
     }).when('/rooms',{
         templateUrl:'/pages/rooms.html',
         controller:'RoomsCtrl'
+    }).when('/rooms/:roomId',{
+        templateUrl:'/pages/room.html',
+        controller:'RoomCtrl'
     }).otherwise({
         redirectTo:'/'
     });
-}]).run(['$rootScope',function($rootScope){
+}]).run(['$rootScope','$location',function($rootScope,$location){
+    if(!$rootScope.user){
+        $location.path('/login');
+    }
     $rootScope.$on('login',function(event,user){
         $rootScope.user = user;
     });

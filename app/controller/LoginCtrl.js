@@ -8,6 +8,7 @@ angular.module('zhufengChat').controller('LoginCtrl',['$scope','$http','$locatio
             $scope.$emit('login', user);
             $location.path('/rooms');
         }).error(function(data){
+            console.error(data);
             $location.path('/login');
         });
     }

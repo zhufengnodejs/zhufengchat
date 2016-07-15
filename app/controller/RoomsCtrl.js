@@ -6,8 +6,8 @@ angular.module('zhufengChat').controller('RoomsCtrl',['$scope','$http','$locatio
         method:'get'
     }).success(function(rooms){
         $scope.rooms = $scope._rooms = rooms;
-    }).error(function(){
-
+    }).error(function(result){
+        console.error(result);
     })
 
     //根据关键字进行过滤
@@ -23,11 +23,15 @@ angular.module('zhufengChat').controller('RoomsCtrl',['$scope','$http','$locatio
             method:'POST',
             data:{name:$scope.keyword}
         }).success(function(room){
-            console.log(room);
             $scope._rooms.push(room);
             $scope.filter();
         }).error(function(result){
 
         });
+    }
+
+    //进入房间
+    $scope.join = function(roomId){
+        $location.path("/rooms/"+roomId);
     }
 }]);

@@ -7,7 +7,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-3" ng-repeat="room in rooms">
-                        <div class="panel panel-default">
+                        <div class="panel panel-default" ng-click="join(room._id)">
                             <div class="panel-body text-center">
                                 <h2>{{room.name}}</h2>
                             </div>
