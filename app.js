@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var user = require('./routes/user');
+var room = require('./routes/room');
 var app = express();
 
 app.use(express.static(path.join(__dirname,'app')));
@@ -13,10 +14,11 @@ app.get('/',function(req,res){
 });
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express({
+app.use(session({
     secret:'zfpx',
     resave:true,
     saveUninitialized:true
 }));
 app.use('/user',user);
+app.use('/room',room);
 var server = app.listen(9090);
